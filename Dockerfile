@@ -25,7 +25,7 @@ ENV TORCH_NVCC_FLAGS='-D__CUDA_NO_HALF_OPERATORS__'
 
 # Fix torch installation 1 ( https://github.com/torch/cutorch/issues/834 )
 RUN apt-get purge cmake
-RUN sudo apt-get install libssl-dev
+RUN sudo apt-get -y install libssl-dev
 RUN git clone https://github.com/Kitware/CMake.git /cmake
 RUN cd /cmake && ./bootstrap && make && sudo make install
 
